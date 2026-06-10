@@ -23,14 +23,13 @@ export default function App() {
     const scriptUrl = import.meta.env.VITE_APPS_SCRIPT_URL || '';
 
     if (!scriptUrl) {
-      console.warn("VITE_APPS_SCRIPT_URL is not set. Simulating a successful submission.");
-      setTimeout(() => {
-        setIsSubmitting(false);
-        setIsSubmitted(true);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      }, 1000);
+      setError("VITE_APPS_SCRIPT_URL environment variable is not configured. Please set it in your Vercel deployment.");
+      setIsSubmitting(false);
       return;
     }
+
+    console.log("SCRIPT URL", scriptUrl);
+    console.log("PAYLOAD", data);
 
     try {
       // POST stringified JSON. mode 'no-cors' avoids preflight but makes response opaque
