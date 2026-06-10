@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import React, { useState } from 'react';
 import { Video, Users, CheckSquare, Info, Settings, FileCheck, Film, Trophy, CalendarDays, Award, Loader2 } from 'lucide-react';
 import { Input, Select, Textarea, Checkbox, SectionHeader } from './components/FormFields';
 
@@ -91,21 +91,91 @@ export default function App() {
         </p>
 
         {/* Info Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 text-left">
-          <div className="bg-gradient-to-r from-amber-500/10 to-transparent border-l-4 border-amber-500 p-4">
-            <Trophy className="text-amber-600 mb-3" size={24} />
-            <span className="text-xs font-bold uppercase tracking-widest block mb-1">Total Prize Pool</span>
-            <p className="text-stone-600 text-sm">₹1.41 Lakhs + Awards. First prize ₹51,000.</p>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left items-stretch">
+          {/* Premium Prize Showcase */}
+          <div className="bg-stone-900 text-stone-50 border border-stone-800 rounded-lg p-6 shadow-xl flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-5">
+                <Trophy className="text-amber-400" size={18} />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">Official Prize Pool</span>
+              </div>
+              
+              <div className="space-y-4">
+                {/* First Prize */}
+                <div className="border-b border-stone-800 pb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">First Prize</span>
+                  <p className="font-serif text-3xl font-extrabold text-amber-400 tracking-tight">₹51,000</p>
+                </div>
+                
+                {/* Second Prize */}
+                <div className="border-b border-stone-800 pb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Second Prize</span>
+                  <p className="font-serif text-2xl font-bold text-stone-100 tracking-tight">₹25,000</p>
+                </div>
+                
+                {/* Third Prize */}
+                <div className="border-b border-stone-800 pb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Third Prize</span>
+                  <p className="font-serif text-xl font-semibold text-stone-200 tracking-tight">₹15,000</p>
+                </div>
+                
+                {/* Top 10 Runner-Up Prizes */}
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Top 10 Runner-Up Prizes</span>
+                  <p className="font-serif text-lg font-bold text-stone-300 tracking-tight">₹5,000 <span className="text-[11px] text-amber-500 font-sans uppercase font-bold tracking-wider">Each</span></p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="bg-white border border-stone-200 border-l-4 border-l-stone-400 p-4 shadow-sm">
-            <CalendarDays className="text-stone-500 mb-3" size={24} />
-            <span className="text-xs font-bold uppercase tracking-widest block mb-1 text-stone-700">Submission Window</span>
-            <p className="text-stone-600 text-sm">July 1 - July 8, 2026. Results on July 15.</p>
+
+          {/* Submission Window Card */}
+          <div className="bg-white border border-stone-200 rounded-lg p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-5">
+                <CalendarDays className="text-stone-600" size={18} />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-stone-600">Submission Window</span>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="border-b border-stone-100 pb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Entries Open</span>
+                  <p className="font-serif text-lg font-bold text-stone-800">July 1, 2026</p>
+                </div>
+                <div className="border-b border-stone-100 pb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Entries Close</span>
+                  <p className="font-serif text-lg font-bold text-red-600">July 8, 2026</p>
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Grand Finale & Results</span>
+                  <p className="font-serif text-lg font-bold text-amber-600">July 15, 2026</p>
+                </div>
+              </div>
+            </div>
           </div>
-          <div className="bg-white border border-stone-200 border-l-4 border-l-amber-700 p-4 shadow-sm">
-            <Award className="text-amber-700 mb-3" size={24} />
-            <span className="text-xs font-bold uppercase tracking-widest block mb-1 text-amber-700">Format Rules</span>
-            <p className="text-stone-600 text-sm">Landscape only. 130 - 180 seconds duration.</p>
+
+          {/* Format Rules Card */}
+          <div className="bg-white border border-stone-200 rounded-lg p-6 shadow-sm flex flex-col justify-between">
+            <div>
+              <div className="flex items-center gap-2 mb-5">
+                <Award className="text-amber-700" size={18} />
+                <span className="text-[10px] font-bold uppercase tracking-widest text-amber-700">Format Rules</span>
+              </div>
+              
+              <div className="space-y-4">
+                <div className="border-b border-stone-100 pb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Orientation</span>
+                  <p className="font-serif text-lg font-bold text-stone-800">Landscape Only</p>
+                </div>
+                <div className="border-b border-stone-100 pb-3">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Video Duration</span>
+                  <p className="font-serif text-lg font-bold text-stone-800">130 - 180 Seconds</p>
+                </div>
+                <div>
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Review Criteria</span>
+                  <p className="font-serif text-lg font-bold text-stone-800">Originality & Technical Quality</p>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
