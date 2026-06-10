@@ -1,6 +1,6 @@
 {
-  "name": "Solana Thakurbari Contest",
-  "description": "Registration form for the Solana Thakurbari Short Film Contest.",
+  "name": "Salouna Thakurbari Contest",
+  "description": "Registration form for the Salouna Thakurbari Short Film Contest.",
   "requestFramePermissions": [],
   "majorCapabilities": [
     "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"

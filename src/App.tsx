@@ -58,7 +58,7 @@ export default function App() {
           </div>
           <h2 className="font-serif text-2xl font-bold text-stone-900 mb-3">Submission Received!</h2>
           <p className="text-stone-600 mb-8">
-            Thank you for participating in the Solana Thakurbari Short Film Contest. We will review your entry and contact you soon.
+            Thank you for participating in the Salouna Thakurbari Short Film Contest. We will review your entry and contact you soon.
           </p>
           <button 
             onClick={() => setIsSubmitted(false)}
@@ -81,7 +81,7 @@ export default function App() {
       <div className="relative pt-20 pb-16 px-4 max-w-4xl mx-auto text-center border-b border-stone-200 mb-8">
         <div className="inline-flex items-center gap-3 mb-6 flex-wrap justify-center">
           <span className="bg-amber-500 text-black px-2 py-0.5 text-xs font-bold tracking-widest uppercase">Official Selection 2026</span>
-          <span className="text-amber-600 text-xs tracking-widest uppercase font-medium">Solana Thakurbari Presents</span>
+          <span className="text-amber-600 text-xs tracking-widest uppercase font-medium">Salouna Thakurbari Presents</span>
         </div>
         <h1 className="font-serif text-5xl md:text-6xl font-bold tracking-tight text-stone-900 mb-2">
           Short Film Contest 2026
@@ -233,7 +233,7 @@ export default function App() {
                   <Textarea label="Video Description" name="Video Description" placeholder="Minimum 50 Characters" minLength={50} required />
                 </div>
                 <div className="md:col-span-2">
-                  <Input label="Video Tags" name="Video Tags" placeholder="e.g., ShortFilm, SolanaThakurbari, Heritage" />
+                  <Input label="Video Tags" name="Video Tags" placeholder="e.g., ShortFilm, SalounaThakurbari, Heritage" />
                 </div>
                 
                 <Input label="Thumbnail Image Link" name="Thumbnail Image Link" type="url" placeholder="GAuth/Drive Link or Imgur" required />
@@ -361,7 +361,7 @@ export default function App() {
           </div>
 
           <div className="mt-12 pt-8 border-t border-stone-200 flex items-center justify-between flex-wrap gap-4">
-            <p className="text-[11px] text-stone-500 uppercase tracking-tighter">© 2026 Solana Thakurbari Cultural Committee</p>
+            <p className="text-[11px] text-stone-500 uppercase tracking-tighter">© 2026 Salouna Thakurbari Cultural Committee</p>
             <div className="flex items-center gap-4 w-full md:w-auto">
               {error && <p className="text-red-500 text-sm text-right flex-1">{error}</p>}
               <button 
