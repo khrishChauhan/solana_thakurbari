@@ -11,12 +11,14 @@ Here is the complete process to deploy the listener and attach it to your React 
 Delete any code in the script editor and paste the following snippet:
 
 ```javascript
-// Change this to match your sheet name (e.g. 'Form Responses 1')
+// Replace with your actual Google Sheet ID
+const SPREADSHEET_ID = 'YOUR_SPREADSHEET_ID_HERE';
+// Change this to match your sheet name (e.g. 'Sheet1')
 const TARGET_SHEET_NAME = 'Sheet1'; 
 
 function doPost(e) {
   try {
-    const doc = SpreadsheetApp.getActiveSpreadsheet();
+    const doc = SpreadsheetApp.openById(SPREADSHEET_ID);
     const sheet = doc.getSheetByName(TARGET_SHEET_NAME) || doc.getSheets()[0];
     
     // We parse the payload from text/plain to avoid CORS preflight options
