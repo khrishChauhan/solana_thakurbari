@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Video, Users, CheckSquare, Info, Settings, FileCheck, Film, Trophy, CalendarDays, Award, Loader2 } from 'lucide-react';
+import { Users, CheckSquare, Info, FileCheck, Film, Trophy, CalendarDays, Award, Loader2 } from 'lucide-react';
 import { Input, Select, Textarea, Checkbox, SectionHeader } from './components/FormFields';
 
 export default function App() {
@@ -7,8 +7,6 @@ export default function App() {
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
-  const [language, setLanguage] = useState('');
-  const [camera, setCamera] = useState('');
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -93,61 +91,93 @@ export default function App() {
         {/* Info Cards */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-left items-stretch">
           {/* Premium Prize Showcase */}
-          <div className="bg-stone-900 text-stone-50 border border-stone-800 rounded-lg p-6 shadow-xl flex flex-col justify-between">
+          <div className="bg-stone-900 text-stone-50 border border-stone-800 rounded-lg p-4 md:p-6 shadow-xl flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 mb-5">
+              <div className="flex items-center gap-2 mb-4 md:mb-5">
                 <Trophy className="text-amber-400" size={18} />
                 <span className="text-[10px] font-bold uppercase tracking-widest text-amber-400">Official Prize Pool</span>
               </div>
               
-              <div className="space-y-4">
+              <div className="grid grid-cols-2 gap-3 md:flex md:flex-col md:space-y-4">
                 {/* First Prize */}
-                <div className="border-b border-stone-800 pb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">First Prize</span>
-                  <p className="font-serif text-3xl font-extrabold text-amber-400 tracking-tight">₹51,000</p>
+                <div className="bg-stone-800/40 md:bg-transparent p-3 md:p-0 rounded-md md:rounded-none md:border-b md:border-stone-800 md:pb-3">
+                  <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">First Prize</span>
+                  <p className="font-serif text-2xl md:text-3xl font-extrabold text-amber-400 tracking-tight">₹51,000</p>
                 </div>
                 
                 {/* Second Prize */}
-                <div className="border-b border-stone-800 pb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Second Prize</span>
-                  <p className="font-serif text-2xl font-bold text-stone-100 tracking-tight">₹25,000</p>
+                <div className="bg-stone-800/40 md:bg-transparent p-3 md:p-0 rounded-md md:rounded-none md:border-b md:border-stone-800 md:pb-3">
+                  <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Second Prize</span>
+                  <p className="font-serif text-xl md:text-2xl font-bold text-stone-100 tracking-tight">₹25,000</p>
                 </div>
                 
                 {/* Third Prize */}
-                <div className="border-b border-stone-800 pb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Third Prize</span>
-                  <p className="font-serif text-xl font-semibold text-stone-200 tracking-tight">₹15,000</p>
+                <div className="bg-stone-800/40 md:bg-transparent p-3 md:p-0 rounded-md md:rounded-none md:border-b md:border-stone-800 md:pb-3">
+                  <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Third Prize</span>
+                  <p className="font-serif text-lg md:text-xl font-semibold text-stone-200 tracking-tight">₹15,000</p>
                 </div>
                 
                 {/* Top 10 Runner-Up Prizes */}
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Top 10 Runner-Up Prizes</span>
-                  <p className="font-serif text-lg font-bold text-stone-300 tracking-tight">₹5,000 <span className="text-[11px] text-amber-500 font-sans uppercase font-bold tracking-wider">Each</span></p>
+                <div className="bg-stone-800/40 md:bg-transparent p-3 md:p-0 rounded-md md:rounded-none md:pb-0">
+                  <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Top 10 Runner-Up</span>
+                  <p className="font-serif text-base md:text-lg font-bold text-stone-300 tracking-tight">₹5,000 <span className="text-[10px] md:text-[11px] text-amber-500 font-sans uppercase font-bold tracking-wider">Each</span></p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Submission Window Card */}
-          <div className="bg-white border border-stone-200 rounded-lg p-6 shadow-sm flex flex-col justify-between">
+          {/* Submission Timeline Card */}
+          <div className="bg-white border border-stone-200 rounded-lg p-4 md:p-6 shadow-sm flex flex-col justify-between">
             <div>
-              <div className="flex items-center gap-2 mb-5">
+              <div className="flex items-center gap-2 mb-4 md:mb-5">
                 <CalendarDays className="text-stone-600" size={18} />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-stone-600">Submission Window</span>
+                <span className="text-[10px] font-bold uppercase tracking-widest text-stone-600">Official Timeline</span>
               </div>
               
-              <div className="space-y-4">
-                <div className="border-b border-stone-100 pb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Entries Open</span>
-                  <p className="font-serif text-lg font-bold text-stone-800">July 1, 2026</p>
+              <div className="space-y-3 md:space-y-3.5 pl-0.5">
+                {/* Shooting & Editing Period */}
+                <div className="flex items-start gap-2">
+                  <span className="text-xs mt-0.5" role="img" aria-label="shooting">📅</span>
+                  <div>
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Shooting & Editing Period</span>
+                    <p className="font-serif text-xs md:text-sm font-bold text-stone-800 leading-tight">15 June – 30 June</p>
+                  </div>
                 </div>
-                <div className="border-b border-stone-100 pb-3">
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Entries Close</span>
-                  <p className="font-serif text-lg font-bold text-red-600">July 8, 2026</p>
+
+                {/* Submission Window Opens */}
+                <div className="flex items-start gap-2">
+                  <span className="text-xs mt-0.5" role="img" aria-label="submission opens">📤</span>
+                  <div>
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Submission Opens</span>
+                    <p className="font-serif text-xs md:text-sm font-bold text-stone-800 leading-tight">1 July 2026</p>
+                  </div>
                 </div>
-                <div>
-                  <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Grand Finale & Results</span>
-                  <p className="font-serif text-lg font-bold text-amber-600">July 15, 2026</p>
+
+                {/* Submission Deadline */}
+                <div className="flex items-start gap-2">
+                  <span className="text-xs mt-0.5" role="img" aria-label="deadline">⏰</span>
+                  <div>
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-red-400 block">Submission Deadline</span>
+                    <p className="font-serif text-xs md:text-sm font-bold text-red-600 leading-tight">15 July 2026</p>
+                  </div>
+                </div>
+
+                {/* Judging Period */}
+                <div className="flex items-start gap-2">
+                  <span className="text-xs mt-0.5" role="img" aria-label="judging">⚖️</span>
+                  <div>
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Judging Period</span>
+                    <p className="font-serif text-xs md:text-sm font-bold text-stone-800 leading-tight">16 July – 25 July</p>
+                  </div>
+                </div>
+
+                {/* Results Announcement */}
+                <div className="flex items-start gap-2">
+                  <span className="text-xs mt-0.5" role="img" aria-label="results">🏆</span>
+                  <div>
+                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-amber-500 block">Results Announcement</span>
+                    <p className="font-serif text-xs md:text-sm font-bold text-amber-600 leading-tight">31 July 2026</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -168,7 +198,7 @@ export default function App() {
                 </div>
                 <div className="border-b border-stone-100 pb-3">
                   <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Video Duration</span>
-                  <p className="font-serif text-lg font-bold text-stone-800">130 - 180 Seconds</p>
+                  <p className="font-serif text-lg font-bold text-stone-800">120 - 300 Seconds</p>
                 </div>
                 <div>
                   <span className="text-[10px] font-bold uppercase tracking-wider text-stone-400 block mb-0.5">Review Criteria</span>
@@ -282,108 +312,7 @@ export default function App() {
               )}
             </section>
 
-            {/* Section 4: Video Details */}
-            <section>
-              <SectionHeader title="Video Submission Details" icon={Video} description="Please ensure your settings match the contest guidelines." />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <div className="md:col-span-2">
-                  <Input 
-                    label="YouTube Video Link" 
-                    name="YouTube Video Link"
-                    type="url" 
-                    placeholder="https://youtu.be/..." 
-                    required 
-                  />
-                  <p className="text-[11px] text-stone-500 mt-2">Video must be Public or Unlisted.</p>
-                </div>
-                <div className="md:col-span-2">
-                  <Input label="Video Title" name="Video Title" placeholder="Enter video title as it appears on YouTube" required />
-                </div>
-                <div className="md:col-span-2">
-                  <Textarea label="Video Description" name="Video Description" placeholder="Minimum 50 Characters" minLength={50} required />
-                </div>
-                <div className="md:col-span-2">
-                  <Input label="Video Tags" name="Video Tags" placeholder="e.g., ShortFilm, SalounaThakurbari, Heritage" />
-                </div>
-                
-                <Input label="Thumbnail Image Link" name="Thumbnail Image Link" type="url" placeholder="GAuth/Drive Link or Imgur" required />
-                <Input label="Total Duration" name="Total Duration" placeholder="Format: 02:45" required />
-                
-                <Select 
-                  label="Language Used" 
-                  name="Language Used"
-                  value={language}
-                  onChange={(e) => setLanguage(e.target.value)}
-                  options={[
-                    { label: 'Hindi', value: 'Hindi' },
-                    { label: 'English', value: 'English' },
-                    { label: 'Bhojpuri', value: 'Bhojpuri' },
-                    { label: 'Other', value: 'Other' },
-                  ]}
-                  required
-                />
-                {language === 'Other' && (
-                  <Input label="Specify Language" name="Specify Language" placeholder="Type language here" required />
-                )}
-                
-                <div className="md:col-span-2">
-                  <Textarea label="List All Cast & Crew with Roles" name="Cast & Crew with Roles" placeholder="Provide full credits" required />
-                </div>
-              </div>
-            </section>
 
-            {/* Section 5: Technical Specs */}
-            <section>
-              <SectionHeader title="Technical Specifications" icon={Settings} />
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                <Select 
-                  label="Camera Used" 
-                  name="Camera Used"
-                  value={camera}
-                  onChange={(e) => setCamera(e.target.value)}
-                  options={[
-                    { label: 'Mobile', value: 'Mobile' },
-                    { label: 'DSLR', value: 'DSLR' },
-                    { label: 'Mirrorless', value: 'Mirrorless' },
-                    { label: 'Cinema Camera', value: 'Cinema Camera' },
-                    { label: 'Other', value: 'Other' },
-                  ]}
-                  required
-                />
-                
-                {camera === 'Other' ? (
-                  <Input label="Specify Camera" name="Specify Camera" placeholder="Enter camera model" required />
-                ) : (
-                  <div className="hidden md:block" />
-                )}
-                
-                <Input label="Editing Software Used" name="Editing Software Used" placeholder="e.g., Premiere Pro, DaVinci, CapCut" required />
-                
-                <div className="space-y-4">
-                  <label className="text-[10px] uppercase text-stone-600 font-semibold tracking-wider block">Shot in 4K or Higher? <span className="text-amber-500">*</span></label>
-                  <div className="flex gap-4">
-                    <label className="flex items-center gap-2 cursor-pointer text-stone-700 text-sm">
-                      <input type="radio" name="Shot in 4K or Higher" value="Yes" required className="accent-amber-500 bg-transparent border-stone-300 w-4 h-4" /> Yes
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer text-stone-700 text-sm">
-                      <input type="radio" name="Shot in 4K or Higher" value="No" className="accent-amber-500 bg-transparent border-stone-300 w-4 h-4" /> No
-                    </label>
-                  </div>
-                </div>
-
-                <div className="space-y-4">
-                  <label className="text-[10px] uppercase text-stone-600 font-semibold tracking-wider block">Is the Video Color-Graded? <span className="text-amber-500">*</span></label>
-                  <div className="flex gap-4">
-                    <label className="flex items-center gap-2 cursor-pointer text-stone-700 text-sm">
-                      <input type="radio" name="Is Color-Graded" value="Yes" required className="accent-amber-500 bg-transparent border-stone-300 w-4 h-4" /> Yes
-                    </label>
-                    <label className="flex items-center gap-2 cursor-pointer text-stone-700 text-sm">
-                      <input type="radio" name="Is Color-Graded" value="No" className="accent-amber-500 bg-transparent border-stone-300 w-4 h-4" /> No
-                    </label>
-                  </div>
-                </div>
-              </div>
-            </section>
 
             {/* Section 3: Content Guidelines */}
             <section className="bg-stone-50 p-6 rounded-lg border border-stone-200">
