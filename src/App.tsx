@@ -33,23 +33,16 @@ export default function App() {
     }
 
     try {
-      // POST stringified JSON as text/plain to bypass CORS preflight issues
-      const response = await fetch(scriptUrl, {
+      // POST stringified JSON. mode 'no-cors' avoids preflight but makes response opaque
+      await fetch(scriptUrl, {
         method: 'POST',
-        headers: {
-          'Content-Type': 'text/plain;charset=utf-8',
-        },
+        mode: 'no-cors',
         body: JSON.stringify(data),
       });
 
-      const result = await response.json();
-
-      if (result.status === 'success') {
-        setIsSubmitted(true);
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        setError(result.message || 'An error occurred during submission.');
-      }
+      // Since response is opaque, we assume success if no network error occurred
+      setIsSubmitted(true);
+      window.scrollTo({ top: 0, behavior: 'smooth' });
     } catch (err: any) {
       setError(err.message || 'Failed to connect to the submission server.');
     } finally {
