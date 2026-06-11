@@ -147,8 +147,17 @@ export default function App() {
               <div className="flex items-start gap-4 p-4 md:p-5 bg-stone-50 rounded-lg border border-stone-100">
                 <span className="text-2xl mt-1" role="img" aria-label="submission opens">📤</span>
                 <div>
-                  <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-stone-500 block mb-1">Submission Opens</span>
-                  <p className="font-serif text-lg md:text-xl font-bold text-stone-800 leading-tight">1 July 2026</p>
+                  <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-stone-500 block mb-1">Submission Window</span>
+                  <p className="font-serif text-lg md:text-xl font-bold text-stone-800 leading-tight">1 July – 8 July 2026</p>
+                </div>
+              </div>
+
+              {/* Results Announcement */}
+              <div className="flex items-start gap-4 p-4 md:p-5 bg-amber-50 rounded-lg border border-amber-100">
+                <span className="text-2xl mt-1" role="img" aria-label="results">🏆</span>
+                <div>
+                  <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-amber-600 block mb-1">Results Announcement</span>
+                  <p className="font-serif text-lg md:text-xl font-bold text-stone-800 leading-tight">15 July 2026</p>
                 </div>
               </div>
             </div>
