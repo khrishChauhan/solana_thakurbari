@@ -127,57 +127,28 @@ export default function App() {
           </div>
 
           {/* Submission Timeline Card */}
-          <div className="bg-white border border-stone-200 rounded-lg p-4 md:p-6 shadow-sm flex flex-col justify-between">
-            <div>
-              <div className="flex items-center gap-2 mb-4 md:mb-5">
-                <CalendarDays className="text-stone-600" size={18} />
-                <span className="text-[10px] font-bold uppercase tracking-widest text-stone-600">Official Timeline</span>
+          <div className="bg-white border border-stone-200 rounded-lg p-4 md:p-6 shadow-sm flex flex-col">
+            <div className="flex items-center gap-2 mb-6">
+              <CalendarDays className="text-stone-600" size={18} />
+              <span className="text-[10px] font-bold uppercase tracking-widest text-stone-600">Official Timeline</span>
+            </div>
+            
+            <div className="flex flex-col flex-1 justify-center gap-6">
+              {/* Shooting & Editing Period */}
+              <div className="flex items-start gap-4 p-4 md:p-5 bg-stone-50 rounded-lg border border-stone-100">
+                <span className="text-2xl mt-1" role="img" aria-label="shooting">📅</span>
+                <div>
+                  <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-stone-500 block mb-1">Shooting & Editing Period</span>
+                  <p className="font-serif text-lg md:text-xl font-bold text-stone-800 leading-tight">15 June – 30 June</p>
+                </div>
               </div>
-              
-              <div className="space-y-3 md:space-y-3.5 pl-0.5">
-                {/* Shooting & Editing Period */}
-                <div className="flex items-start gap-2">
-                  <span className="text-xs mt-0.5" role="img" aria-label="shooting">📅</span>
-                  <div>
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Shooting & Editing Period</span>
-                    <p className="font-serif text-xs md:text-sm font-bold text-stone-800 leading-tight">15 June – 30 June</p>
-                  </div>
-                </div>
 
-                {/* Submission Window Opens */}
-                <div className="flex items-start gap-2">
-                  <span className="text-xs mt-0.5" role="img" aria-label="submission opens">📤</span>
-                  <div>
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Submission Opens</span>
-                    <p className="font-serif text-xs md:text-sm font-bold text-stone-800 leading-tight">1 July 2026</p>
-                  </div>
-                </div>
-
-                {/* Submission Deadline */}
-                <div className="flex items-start gap-2">
-                  <span className="text-xs mt-0.5" role="img" aria-label="deadline">⏰</span>
-                  <div>
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-red-400 block">Submission Deadline</span>
-                    <p className="font-serif text-xs md:text-sm font-bold text-red-600 leading-tight">15 July 2026</p>
-                  </div>
-                </div>
-
-                {/* Judging Period */}
-                <div className="flex items-start gap-2">
-                  <span className="text-xs mt-0.5" role="img" aria-label="judging">⚖️</span>
-                  <div>
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-stone-400 block">Judging Period</span>
-                    <p className="font-serif text-xs md:text-sm font-bold text-stone-800 leading-tight">16 July – 25 July</p>
-                  </div>
-                </div>
-
-                {/* Results Announcement */}
-                <div className="flex items-start gap-2">
-                  <span className="text-xs mt-0.5" role="img" aria-label="results">🏆</span>
-                  <div>
-                    <span className="text-[9px] md:text-[10px] font-bold uppercase tracking-wider text-amber-500 block">Results Announcement</span>
-                    <p className="font-serif text-xs md:text-sm font-bold text-amber-600 leading-tight">31 July 2026</p>
-                  </div>
+              {/* Submission Window Opens */}
+              <div className="flex items-start gap-4 p-4 md:p-5 bg-stone-50 rounded-lg border border-stone-100">
+                <span className="text-2xl mt-1" role="img" aria-label="submission opens">📤</span>
+                <div>
+                  <span className="text-[10px] md:text-xs font-bold uppercase tracking-wider text-stone-500 block mb-1">Submission Opens</span>
+                  <p className="font-serif text-lg md:text-xl font-bold text-stone-800 leading-tight">1 July 2026</p>
                 </div>
               </div>
             </div>
