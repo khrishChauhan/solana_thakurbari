@@ -309,21 +309,7 @@ export default function App() {
             {/* Section 6: Declaration */}
             <section>
               <SectionHeader title="Declaration & Verification" icon={FileCheck} />
-              <div className="p-6 bg-gradient-to-r from-amber-50 to-transparent border-l-4 border-amber-500 mb-8 rounded-r-lg">
-                <h4 className="flex items-center gap-2 text-amber-600 font-bold uppercase tracking-widest text-xs mb-3">
-                  <Info size={16} /> Important Note
-                </h4>
-                <p className="text-stone-700 text-sm leading-relaxed mb-4">
-                  Organizers may request Aadhaar/ID Proof, Raw Footage, Editing Project Files, or Shooting Location Proof for verification. Failure to provide documents within 48 hours may result in disqualification.
-                </p>
-                <div className="space-y-4">
-                  <Checkbox label="I hereby declare that all information provided is true and accurate." required />
-                  <Checkbox label="I understand that organizers reserve the right to disqualify any entry violating the rules." required />
-                  <Checkbox label="I agree to provide additional documentation if requested." required />
-                </div>
-              </div>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-end mt-6">
                 <Input label="Signature (Type Full Name)" name="Signature" placeholder="Sign here" required />
                 <div className="flex flex-col gap-1.5 w-full">
                   <label className="text-[10px] uppercase text-stone-600 font-semibold tracking-wider">Date of Submission</label>
@@ -335,6 +321,8 @@ export default function App() {
                   />
                 </div>
               </div>
+
+
             </section>
 
           </div>
